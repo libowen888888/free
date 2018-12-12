@@ -1,0 +1,16 @@
+#端口号
+server:
+  port: 8080
+  servlet-path: /fr
+
+#配置数据库的四大组件
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/freeroom
+    username: root
+    password: root
+    
+# 配置mybatis的mapper映射文件
+mybatis:
+  mapper-locations: classpath:com/bdqn/mapper/*.xml

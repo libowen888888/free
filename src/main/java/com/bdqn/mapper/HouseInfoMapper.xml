@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  配置dao层的接口位置 -->
+<mapper namespace="com.bdqn.dao.HouseInfoDao">
+	
+	
+	
+	<select id="selectAll" resultType="com.bdqn.entity.HouseInfo">
+		select * from houseinfo
+	</select>
+	
+	<select id="selectFenye" parameterType="java.util.Map" resultType="com.bdqn.entity.HouseInfo">
+		select * from houseinfo
+		<where>
+			<if test="type!=null and type!=''">
+				type=#{type}
+			</if>
+		</where>
+		limit #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="selectById" parameterType="int" resultType="com.bdqn.entity.HouseInfo">
+		select * from houseinfo where id=#{id}
+	</select>
+	
+	
+	
+	
+</mapper>
